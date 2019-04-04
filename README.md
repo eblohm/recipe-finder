@@ -15,6 +15,14 @@ npm start
 
 Navigate to localhost:3000 and start adding your recipes
 
+### Todo
+
+1) Connect the form to the db.json in another directory (not in this repository at the moment)
+2) Merge the create and edit forms to DRY the code
+3) Add the search functionality
+4) Make it look _goooood_
+
+
 #### Future Updates
 
 Currently, this is _completely_ unsecured. There is no authentication whatsoever, it's meant to be run on a local server, nothing exposed to the internet. In the future, I'd like to add the following:
