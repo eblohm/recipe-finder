@@ -1,6 +1,6 @@
 ## Recipe Finder
 
-This was made after my fiancee and I got sick of trying to decide what we wanted to make for dinner each night despite having ingredients to make meals with.
+This was made after my fiancée and I got sick of trying to decide what we wanted to make for dinner each night despite having ingredients to make meals with.
 
 You can add all of your favorite recipes, then when you're struggling to figure out what you should make, open the website and start typing in the ingredients you've got! The app will automatically search and list out the recipes you can create, and you can decide from there.
 
@@ -8,7 +8,8 @@ You can add all of your favorite recipes, then when you're struggling to figure 
 
 Download the repository and run
 
-``` npm install && npm start ```
+``` npm install
+npm start ```
 
 Navigate to localhost:3000 and start adding your recipes
 
