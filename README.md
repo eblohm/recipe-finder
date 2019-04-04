@@ -9,8 +9,8 @@ You can add all of your favorite recipes, then when you're struggling to figure 
 Download the repository and run
 
 ```
-  npm install
-  npm start 
+npm install
+npm start 
 ```
 
 Navigate to localhost:3000 and start adding your recipes
