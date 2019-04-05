@@ -10,22 +10,20 @@ Download the repository and run
 
 ```
 npm install
-npm start 
+npm start
 ```
 
 Navigate to localhost:3000 and start adding your recipes
 
 ### Todo
 
-1) Connect the form to the db.json in another directory (not in this repository at the moment)
-2) Merge the create and edit forms to DRY the code
-3) Add the search functionality
-4) Make it look _goooood_
-
+1. Add the search functionality
+2. Make the errors more descriptive
+3. Make it look _goooood_
 
 #### Future Updates
 
 Currently, this is _completely_ unsecured. There is no authentication whatsoever, it's meant to be run on a local server, nothing exposed to the internet. In the future, I'd like to add the following:
 
-1) Authentication and make it a real website! More users = more recipes = more options to cook!
-2) Allow users (while local or when a real website) to mark meals as "made" so they can track which meals they've cooked to give them more variety
+1. Authentication and make it a real website! More users = more recipes = more options to cook!
+2. Allow users (while local or when a real website) to mark meals as "made" so they can track which meals they've cooked to give them more variety
