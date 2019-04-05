@@ -1,5 +1,5 @@
 import React from 'react';
-import { Router, Route } from 'react-router-dom';
+import { Router, Route, Switch } from 'react-router-dom';
 
 import RecipeCreate from './recipes/RecipeCreate';
 import RecipeEdit from './recipes/RecipeEdit';
@@ -15,11 +15,13 @@ const App = () => {
       <Router history={history}>
         <div>
           <Header />
-          <Route path="/" exact component={RecipeList} />
-          <Route path="/recipes/new" exact component={RecipeCreate} />
-          <Route path="/recipes/edit/:id" exact component={RecipeEdit} />
-          <Route path="/recipes/delete" exact component={RecipeDelete} />
-          <Route path="/recipes/show" exact component={RecipeShow} />
+          <Switch>
+            <Route path="/" exact component={RecipeList} />
+            <Route path="/recipes/new" exact component={RecipeCreate} />
+            <Route path="/recipes/edit/:id" exact component={RecipeEdit} />
+            <Route path="/recipes/delete/:id" exact component={RecipeDelete} />
+            <Route path="/recipes/:id" exact component={RecipeShow} />
+          </Switch>
         </div>
       </Router>
     </div>
