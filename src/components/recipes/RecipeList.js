@@ -15,30 +15,20 @@ class RecipeList extends Component {
   }
 
   getSearchedRecipes() {
-    const searchedIngredients = 'VEGETABLE BROTH, noodles ';
+    const searchedIngredients = 'VEGETABLE BROTH ';
     const searchedList = searchedIngredients.split(', ');
 
-    this.props.recipes.map(recipe => {
-      const foundRecipes = recipe.ingredients.filter(({ ingredient }) =>
-        searchedList.includes(ingredient)
-      );
-      console.log(foundRecipes);
-    });
+    let foundRecipes = this.props.recipes.filter(recipe =>
+      searchedList.every(searchItem =>
+        recipe.ingredients.some(
+          i =>
+            i.ingredient.toLowerCase().trim() ===
+            searchItem.toLowerCase().trim()
+        )
+      )
+    );
 
-    /*searchedList.forEach(searchedIngredient => {
-      this.props.recipes.map(recipe => {
-        if (
-          recipe.ingredients.find(
-            ({ ingredient }) =>
-              ingredient.toLowerCase() ===
-              searchedIngredient.toLowerCase().trim()
-          ) !== undefined
-        ) {
-          foundRecipes.push(recipe);
-          console.log(foundRecipes);
-        }
-      });
-    });*/
+    console.log(foundRecipes);
   }
 
   renderList() {
