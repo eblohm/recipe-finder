@@ -14,6 +14,7 @@ class RecipeShow extends Component {
     }
 
     const { name, ingredients, directions } = this.props.recipe;
+
     return (
       <div>
         <h3>{name}</h3>
