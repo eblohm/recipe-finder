@@ -17,11 +17,10 @@ const App = () => {
         <div>
           <Header />
           <Switch>
-            <Route path="/" exact component={RecipeList} />
+            <Route path="/" exact component={RecipeSearch} />
             <Route path="/recipes/new" exact component={RecipeCreate} />
             <Route path="/recipes/edit/:id" exact component={RecipeEdit} />
             <Route path="/recipes/delete/:id" exact component={RecipeDelete} />
-            <Route path="/recipes/search" exact component={RecipeSearch} />
             <Route path="/recipes/:id" exact component={RecipeShow} />
           </Switch>
         </div>

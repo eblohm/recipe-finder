@@ -18,10 +18,22 @@ class RecipeList extends Component {
   }
 
   render() {
+    console.log(this.props.foundRecipes);
+    // If nothing has been searched
+    if (this.props.foundRecipes === undefined) {
+      return (
+        <div>
+          <h3>No recipes currently available.</h3>
+        </div>
+      );
+    }
+
+    // If nothing has been searched, show all recipes available
     if (this.props.foundRecipes.length === 0) {
       return <div>{this.showRecipes(this.props.recipes)}</div>;
     }
 
+    // If something has been searched, show recipes with the ingredients
     return <div>{this.showRecipes(this.props.foundRecipes)}</div>;
   }
 }

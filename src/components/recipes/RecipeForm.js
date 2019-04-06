@@ -71,6 +71,11 @@ class RecipeForm extends Component {
           component={this.renderInput}
           label="Enter Recipe Name"
         />
+        <Field
+          name="description"
+          component={this.renderInput}
+          label="Enter Description of the Recipe"
+        />
         <FieldArray name="ingredients" component={this.renderIngredients} />
         <Field
           name="directions"
@@ -88,6 +93,10 @@ const validate = formValues => {
 
   if (!formValues.name) {
     errors.name = 'You must enter a name';
+  }
+
+  if (!formValues.directions) {
+    errors.directions = 'How do you expect to cook this without directions?';
   }
 
   return errors;
