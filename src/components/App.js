@@ -6,6 +6,7 @@ import RecipeEdit from './recipes/RecipeEdit';
 import RecipeDelete from './recipes/RecipeDelete';
 import RecipeList from './recipes/RecipeList';
 import RecipeShow from './recipes/RecipeShow';
+import RecipeSearch from './recipes/RecipeSearch';
 import Header from './Header';
 import history from '../history';
 
@@ -20,6 +21,7 @@ const App = () => {
             <Route path="/recipes/new" exact component={RecipeCreate} />
             <Route path="/recipes/edit/:id" exact component={RecipeEdit} />
             <Route path="/recipes/delete/:id" exact component={RecipeDelete} />
+            <Route path="/recipes/search" exact component={RecipeSearch} />
             <Route path="/recipes/:id" exact component={RecipeShow} />
           </Switch>
         </div>
