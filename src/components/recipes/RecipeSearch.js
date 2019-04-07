@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
 import { fetchRecipes } from '../../actions';
 import RecipeList from './RecipeList';
 
@@ -40,17 +39,22 @@ class RecipeSearch extends Component {
 
   render() {
     return (
-      <div>
-        <form onSubmit={this.handleSubmit}>
-          <label>
+      <div className="recipe-search">
+        <form onSubmit={this.handleSubmit} className="recipe-search--form">
+          <label className="recipe-search--form__label">
             What ingredients do you have?
             <input
               type="text"
               value={this.state.value}
               onChange={this.handleChange}
+              className="recipe-search--form__input"
             />
           </label>
-          <input type="submit" value="Submit" />
+          <input
+            type="submit"
+            value="Submit"
+            className="recipe-search--form__submit"
+          />
         </form>
         <RecipeList foundRecipes={this.state.foundRecipes} />
       </div>

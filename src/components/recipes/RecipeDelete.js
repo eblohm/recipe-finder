@@ -19,10 +19,11 @@ class RecipeDelete extends Component {
           onClick={() => {
             this.props.deleteRecipe(id);
           }}
+          className="recipe--button__delete"
         >
           Delete Recipe
         </button>
-        <Link to="/" className="ui button">
+        <Link to="/" className="recipe--button__cancel">
           Cancel
         </Link>
       </React.Fragment>

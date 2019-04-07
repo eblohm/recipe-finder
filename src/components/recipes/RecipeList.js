@@ -11,30 +11,47 @@ class RecipeList extends Component {
 
   showRecipes(recipes) {
     return recipes.map(recipe => (
-      <li key={recipe.name}>
-        <Link to={`/recipes/${recipe.id}`}>{recipe.name}</Link>
-      </li>
+      <div className="recipe" key={recipe.name}>
+        <Link to={`/recipes/${recipe.id}`} className="recipe--link">
+          <h3 className="recipe--name">{recipe.name}</h3>
+          <p className="recipe--description">{recipe.description}</p>
+        </Link>
+      </div>
     ));
   }
 
   render() {
-    console.log(this.props.foundRecipes);
     // If nothing has been searched
     if (this.props.foundRecipes === undefined) {
       return (
-        <div>
-          <h3>No recipes currently available.</h3>
+        <div className="recipe-list">
+          <h3 className="recipe-list--response">
+            No recipes currently available.
+          </h3>
+          <hr className="recipe-list--divider" />
         </div>
       );
     }
 
     // If nothing has been searched, show all recipes available
     if (this.props.foundRecipes.length === 0) {
-      return <div>{this.showRecipes(this.props.recipes)}</div>;
+      return (
+        <div className="recipe-list">
+          <h3 className="recipe-list--response">No recipes found...</h3>
+          <hr className="recipe-list--divider" />
+          {this.showRecipes(this.props.recipes)}
+        </div>
+      );
     }
 
     // If something has been searched, show recipes with the ingredients
-    return <div>{this.showRecipes(this.props.foundRecipes)}</div>;
+    return (
+      <div className="recipe-list">
+        <h3 className="recipe-list--response">Found the following recipes:</h3>
+        <hr className="recipe-list--divider" />
+        {this.showRecipes(this.props.foundRecipes)}
+      </div>
+    );
   }
 }
 

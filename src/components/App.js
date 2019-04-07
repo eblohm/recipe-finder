@@ -4,7 +4,6 @@ import { Router, Route, Switch } from 'react-router-dom';
 import RecipeCreate from './recipes/RecipeCreate';
 import RecipeEdit from './recipes/RecipeEdit';
 import RecipeDelete from './recipes/RecipeDelete';
-import RecipeList from './recipes/RecipeList';
 import RecipeShow from './recipes/RecipeShow';
 import RecipeSearch from './recipes/RecipeSearch';
 import Header from './Header';

@@ -5,15 +5,19 @@ class RecipeForm extends Component {
   renderError({ error, touched }) {
     if (touched && error) {
       return (
-        <div className="ui error">
-          <div className="header">{error}</div>
+        <div className="recipe-form--error">
+          <div className="recipe-form--error__content">{error}</div>
         </div>
       );
     }
   }
 
-  renderInput = ({ input, label, meta }) => {
-    const className = `field ${meta.error && meta.touched ? 'error' : ''}`;
+  renderInput = ({ input, label, meta, name }) => {
+    const className = `recipe-form--ingredient__${name} ${
+      meta.error && meta.touched ? 'error' : ''
+    }`;
+
+    console.log(meta);
 
     return (
       <div className={className}>
@@ -24,35 +28,43 @@ class RecipeForm extends Component {
     );
   };
 
-  renderIngredients = ({ fields, meta: { error, submitFailed } }) => {
+  renderIngredients = ({ fields, meta }) => {
     return (
-      <ul>
-        <li>
-          <button type="button" onClick={() => fields.push({})}>
+      <div className="recipe-form--ingredients">
+        <div className="recipe-form--ingredients__add">
+          <button
+            type="button"
+            className="recipe-form--ingredients__add__button"
+            onClick={() => fields.push({})}
+          >
             Add Ingredient
           </button>
-          {submitFailed && error && <span>{error}</span>}
-        </li>
+          {this.renderError(meta)}
+        </div>
         {fields.map((ingredient, index) => (
-          <li key={index}>
-            <button
-              type="button"
-              title="Remove Ingredient"
-              onClick={() => fields.remove(index)}
-            >
-              Remove Ingredient
-            </button>
-            <h4>Ingredient #{index + 1}</h4>
-            <Field
-              name={`${ingredient}.ingredient`}
-              type="text"
-              component={this.renderInput}
-              placeholder=" asdf"
-              label="Ingredient Name"
-            />
-          </li>
+          <div className="recipe-form--ingredients__single" key={index}>
+            <h4 className="recipe-form--ingredients__label">
+              Ingredient #{index + 1}
+            </h4>
+            <div className="recipe-form--ingredient">
+              <Field
+                name={`${ingredient}.ingredient ingredient`}
+                type="text"
+                component={this.renderInput}
+                label="Ingredient Name"
+              />
+              <button
+                type="button"
+                title="Remove Ingredient"
+                onClick={() => fields.remove(index)}
+                className="recipe-form--ingredient__remove"
+              >
+                Remove Ingredient
+              </button>
+            </div>
+          </div>
         ))}
-      </ul>
+      </div>
     );
   };
 
@@ -64,7 +76,7 @@ class RecipeForm extends Component {
     return (
       <form
         onSubmit={this.props.handleSubmit(this.onSubmit)}
-        className="ui form error"
+        className="recipe-form"
       >
         <Field
           name="name"
@@ -82,7 +94,7 @@ class RecipeForm extends Component {
           component={this.renderInput}
           label="Enter Directions"
         />
-        <button className="ui button primary">Submit</button>
+        <button className="recipe-form--submit">Submit</button>
       </form>
     );
   }
@@ -91,8 +103,18 @@ class RecipeForm extends Component {
 const validate = formValues => {
   const errors = {};
 
+  console.log(errors);
+
   if (!formValues.name) {
     errors.name = 'You must enter a name';
+  }
+
+  if (!formValues.ingredients) {
+    errors.ingredients = 'At least one ingredient is required!';
+  }
+
+  if (!formValues.ingredient) {
+    errors.ingredient = 'You must enter the ingredient';
   }
 
   if (!formValues.directions) {

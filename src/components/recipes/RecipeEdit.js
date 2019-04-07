@@ -15,12 +15,12 @@ class RecipeEdit extends Component {
 
   render() {
     if (!this.props.recipe) {
-      return <div>Loading...</div>;
+      return <div className="loading">Loading...</div>;
     }
 
     return (
-      <div>
-        <h3>Edit this recipe</h3>
+      <div className="recipe-edit">
+        <h3 className="recipe-edit--title">Edit this recipe</h3>
         <RecipeForm
           initialValues={_.pick(
             this.props.recipe,

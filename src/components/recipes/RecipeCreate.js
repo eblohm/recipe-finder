@@ -10,8 +10,8 @@ class RecipeCreate extends Component {
 
   render() {
     return (
-      <div>
-        <h3>Create a recipe</h3>
+      <div className="recipe-create">
+        <h3 className="recipe-create--title">Create a recipe</h3>
         <RecipeForm onSubmit={this.onSubmit} />
       </div>
     );

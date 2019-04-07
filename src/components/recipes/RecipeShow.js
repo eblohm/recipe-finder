@@ -10,24 +10,33 @@ class RecipeShow extends Component {
 
   render() {
     if (!this.props.recipe) {
-      return <div>Loading...</div>;
+      return <div className="loading">Loading...</div>;
     }
 
-    const { name, ingredients, directions } = this.props.recipe;
+    const { name, description, ingredients, directions } = this.props.recipe;
 
     return (
-      <div>
-        <h3>{name}</h3>
-        <h4>Ingredients Needed:</h4>
+      <div className="recipe">
+        <h3 className="recipe--name">{name}</h3>
+        <p className="recipe--description">{description}</p>
+        <h4 className="recipe--ingredients">Ingredients Needed:</h4>
         {ingredients.map(({ ingredient }) => (
-          <li key={ingredient}>{ingredient}</li>
+          <div className="recipe--ingredients__item" key={ingredient}>
+            {ingredient}
+          </div>
         ))}
-        <h4>Directions:</h4>
-        <p>{directions}</p>
-        <Link to={`/recipes/edit/${this.props.recipe.id}`} className="edit">
+        <h4 className="recipe--directions">Directions:</h4>
+        <p className="recipe--directions__content">{directions}</p>
+        <Link
+          to={`/recipes/edit/${this.props.recipe.id}`}
+          className="recipe--link__edit"
+        >
           Edit Recipe
         </Link>
-        <Link to={`/recipes/delete/${this.props.recipe.id}`} className="delete">
+        <Link
+          to={`/recipes/delete/${this.props.recipe.id}`}
+          className="recipe--link__delete"
+        >
           Delete Recipe
         </Link>
       </div>
