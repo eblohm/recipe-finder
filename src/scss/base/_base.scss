@@ -1,4 +1,5 @@
 * {
+  &,
   &::before,
   &::after {
     box-sizing: inherit;
@@ -8,6 +9,7 @@
 }
 
 body {
+  background-color: $color-gray;
   box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
   font-size: 100%;
