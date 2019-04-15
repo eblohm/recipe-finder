@@ -17,9 +17,8 @@ Navigate to localhost:3000 and start adding your recipes
 
 ### Todo
 
-1. Add the search functionality
-2. Make the errors more descriptive
-3. Make it look _goooood_
+1. Make the errors more descriptive
+2. Make it look _goooood_
 
 #### Future Updates
 

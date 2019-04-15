@@ -18,3 +18,7 @@ body {
 a {
   text-decoration: none;
 }
+
+.page-content {
+  @include container(75%, 2rem);
+}

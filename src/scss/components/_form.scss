@@ -1,0 +1,25 @@
+.recipe-form {
+  @include container(50%);
+
+  &--name,
+  &--description,
+  &--ingredient,
+  &--directions {
+    display: flex;
+    justify-content: space-between;
+
+    input {
+      width: 50%;
+    }
+  }
+
+  &--name,
+  &--description,
+  &--ingredients {
+    margin-bottom: 0.5rem;
+  }
+
+  &--single-ingredient {
+    text-align: right;
+  }
+}

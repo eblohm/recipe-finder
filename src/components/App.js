@@ -15,13 +15,19 @@ const App = () => {
       <Router history={history}>
         <div>
           <Header />
-          <Switch>
-            <Route path="/" exact component={RecipeSearch} />
-            <Route path="/recipes/new" exact component={RecipeCreate} />
-            <Route path="/recipes/edit/:id" exact component={RecipeEdit} />
-            <Route path="/recipes/delete/:id" exact component={RecipeDelete} />
-            <Route path="/recipes/:id" exact component={RecipeShow} />
-          </Switch>
+          <div className="page-content">
+            <Switch>
+              <Route path="/" exact component={RecipeSearch} />
+              <Route path="/recipes/new" exact component={RecipeCreate} />
+              <Route path="/recipes/edit/:id" exact component={RecipeEdit} />
+              <Route
+                path="/recipes/delete/:id"
+                exact
+                component={RecipeDelete}
+              />
+              <Route path="/recipes/:id" exact component={RecipeShow} />
+            </Switch>
+          </div>
         </div>
       </Router>
     </div>

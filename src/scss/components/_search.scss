@@ -1,0 +1,36 @@
+%flexcenter {
+  display: flex;
+  justify-content: center;
+}
+
+%inputdefaults {
+  border: 1px solid $color-black;
+  border-radius: 5px;
+  outline: 0;
+  padding: 0.25rem;
+}
+
+.recipe-search {
+  &--form {
+    @extend %flexcenter;
+    align-items: flex-end;
+
+    &__label {
+      @extend %flexcenter;
+      flex-direction: column;
+      font-size: 1.25rem;
+    }
+
+    &__input {
+      @extend %inputdefaults;
+      margin-right: 0.25rem;
+      margin-top: 0.5rem;
+    }
+
+    &__submit {
+      @extend %inputdefaults;
+      background-color: $color-blue-dark;
+      color: $color-white;
+    }
+  }
+}

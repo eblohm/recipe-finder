@@ -12,12 +12,24 @@ class RecipeForm extends Component {
     }
   }
 
-  renderInput = ({ input, label, meta, name }) => {
-    const className = `recipe-form--ingredient__${name} ${
+  renderInput = ({ input, label, meta }) => {
+    const className = `recipe-form--${input.name} ${
       meta.error && meta.touched ? 'error' : ''
     }`;
 
-    console.log(meta);
+    return (
+      <div className={className}>
+        <label>{label}</label>
+        <input {...input} autoComplete="off" />
+        {this.renderError(meta)}
+      </div>
+    );
+  };
+
+  renderIngredient = ({ input, label, meta }) => {
+    const className = `recipe-form--ingredient ${
+      meta.error && meta.touched ? 'error' : ''
+    }`;
 
     return (
       <div className={className}>
@@ -46,11 +58,11 @@ class RecipeForm extends Component {
             <h4 className="recipe-form--ingredients__label">
               Ingredient #{index + 1}
             </h4>
-            <div className="recipe-form--ingredient">
+            <div className="recipe-form--single-ingredient">
               <Field
                 name={`${ingredient}.ingredient ingredient`}
                 type="text"
-                component={this.renderInput}
+                component={this.renderIngredient}
                 label="Ingredient Name"
               />
               <button
@@ -102,8 +114,6 @@ class RecipeForm extends Component {
 
 const validate = formValues => {
   const errors = {};
-
-  console.log(errors);
 
   if (!formValues.name) {
     errors.name = 'You must enter a name';
