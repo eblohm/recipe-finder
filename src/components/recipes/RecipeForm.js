@@ -60,10 +60,16 @@ class RecipeForm extends Component {
             </h4>
             <div className="recipe-form--single-ingredient">
               <Field
-                name={`${ingredient}.ingredient ingredient`}
+                name={`${ingredient}.ingredient`}
                 type="text"
                 component={this.renderIngredient}
                 label="Ingredient Name"
+              />
+              <Field
+                name={`${ingredient}.amount`}
+                type="text"
+                component={this.renderIngredient}
+                label="Amount of Ingredient"
               />
               <button
                 type="button"

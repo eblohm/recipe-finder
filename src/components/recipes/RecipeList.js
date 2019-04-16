@@ -1,4 +1,3 @@
-/* eslint-disable no-loop-func */
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
@@ -37,7 +36,7 @@ class RecipeList extends Component {
     if (this.props.foundRecipes.length === 0) {
       return (
         <div className="recipe-list">
-          <h3 className="recipe-list--response">No recipes found...</h3>
+          <h3 className="recipe-list--response">Showing all recipes:</h3>
           <hr className="recipe-list--divider" />
           {this.showRecipes(this.props.recipes)}
         </div>

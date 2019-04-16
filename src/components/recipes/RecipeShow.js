@@ -16,13 +16,13 @@ class RecipeShow extends Component {
     const { name, description, ingredients, directions } = this.props.recipe;
 
     return (
-      <div className="recipe">
+      <div className="recipe single-recipe">
         <h3 className="recipe--name">{name}</h3>
         <p className="recipe--description">{description}</p>
         <h4 className="recipe--ingredients">Ingredients Needed:</h4>
-        {ingredients.map(({ ingredient }) => (
+        {ingredients.map(({ ingredient, amount }) => (
           <div className="recipe--ingredients__item" key={ingredient}>
-            {ingredient}
+            {amount} {ingredient}
           </div>
         ))}
         <h4 className="recipe--directions">Directions:</h4>
