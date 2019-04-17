@@ -34,7 +34,6 @@ class RecipeForm extends Component {
         <label>{label}</label>
         <input {...input} autoComplete="off" />
         {this.renderError(meta)}
-        {console.log('render meta', meta)}
       </div>
     );
   };
@@ -49,7 +48,6 @@ class RecipeForm extends Component {
         <label>{label}</label>
         <textarea {...input} autoComplete="off" />
         {this.renderError(meta)}
-        {console.log('render meta', meta)}
       </div>
     );
   };
@@ -186,8 +184,6 @@ const validate = formValues => {
   if (!formValues.directions) {
     errors.directions = 'How do you expect to cook this without directions?';
   }
-
-  console.log('these are the errors', errors);
 
   return errors;
 };
