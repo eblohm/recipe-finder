@@ -2,8 +2,20 @@ import React, { Component } from 'react';
 import { Field, FieldArray, reduxForm } from 'redux-form';
 
 class RecipeForm extends Component {
-  renderError({ error, touched }) {
+  renderError({ error, touched, submitFailed }) {
     if (touched && error) {
+      return (
+        <div className="recipe-form--error">
+          <div className="recipe-form--error__content">{error}</div>
+        </div>
+      );
+    }
+
+    if (
+      submitFailed &&
+      error &&
+      error === 'At least one ingredient must be added!'
+    ) {
       return (
         <div className="recipe-form--error">
           <div className="recipe-form--error__content">{error}</div>
@@ -22,7 +34,7 @@ class RecipeForm extends Component {
         <label>{label}</label>
         <input {...input} autoComplete="off" />
         {this.renderError(meta)}
-        {console.log('render input', meta)}
+        {console.log('render meta', meta)}
       </div>
     );
   };

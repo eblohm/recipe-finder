@@ -1,8 +1,7 @@
 .error {
   flex-wrap: wrap;
 
-  label,
-  .recipe-form--error {
+  label {
     color: $color-red;
   }
 
@@ -13,4 +12,8 @@
   .recipe-form--error {
     flex-basis: 100%;
   }
+}
+
+.recipe-form--error {
+  color: $color-red;
 }
