@@ -107,7 +107,6 @@ class RecipeForm extends Component {
             Add Ingredient
           </button>
           {this.renderError(meta)}
-          {console.log(meta)}
         </div>
       </div>
     );
