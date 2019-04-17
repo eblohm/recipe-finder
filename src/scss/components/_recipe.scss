@@ -3,6 +3,12 @@
     margin-top: 1rem;
   }
 
+  &--directions {
+    &__content {
+      white-space: pre;
+    }
+  }
+
   &--directions,
   &--ingredients {
     font-size: 1.5rem;

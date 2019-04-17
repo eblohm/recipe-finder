@@ -142,7 +142,7 @@ class RecipeForm extends Component {
           label="Enter Directions"
         />
         <button className="recipe-form--submit recipe--button__submit">
-          Create Recipe
+          Submit
         </button>
       </form>
     );
