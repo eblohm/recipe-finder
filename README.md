@@ -15,11 +15,6 @@ npm start
 
 Navigate to localhost:3000 and start adding your recipes
 
-### Todo
-
-1. Make the errors more descriptive
-2. Make it look _goooood_
-
 #### Future Updates
 
 Currently, this is _completely_ unsecured. There is no authentication whatsoever, it's meant to be run on a local server, nothing exposed to the internet. In the future, I'd like to add the following:
