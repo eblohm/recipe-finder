@@ -21,4 +21,8 @@ a {
 
 .page-content {
   @include container(75%, 2rem);
+
+  @include breakpoint('bp-600') {
+    @include container(95%, 2rem);
+  }
 }

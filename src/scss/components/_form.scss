@@ -1,6 +1,22 @@
 .recipe-form {
   @include container(50%);
 
+  @include breakpoint('bp-1200') {
+    @include container(65%);
+  }
+
+  @include breakpoint('bp-1000') {
+    @include container(80%);
+  }
+
+  @include breakpoint('bp-800') {
+    @include container(100%);
+  }
+
+  @include breakpoint('bp-500') {
+    text-align: center;
+  }
+
   &--name,
   &--description,
   &--ingredient,
@@ -8,8 +24,22 @@
     display: flex;
     justify-content: space-between;
 
-    input {
+    @include breakpoint('bp-500') {
+      align-items: center;
+      flex-direction: column;
+    }
+
+    input,
+    textarea {
       width: 50%;
+
+      @include breakpoint('bp-500') {
+        width: 80%;
+      }
+    }
+
+    textarea {
+      height: 100px;
     }
   }
 
@@ -41,5 +71,15 @@
 
   &--single-ingredient {
     text-align: right;
+
+    @include breakpoint('bp-500') {
+      text-align: center;
+    }
+  }
+
+  &--directions {
+    &__content {
+      white-space: pre;
+    }
   }
 }

@@ -39,6 +39,21 @@ class RecipeForm extends Component {
     );
   };
 
+  renderDirections = ({ input, label, meta }) => {
+    const className = `recipe-form--${input.name} ${
+      meta.error && meta.touched ? 'error' : ''
+    }`;
+
+    return (
+      <div className={className}>
+        <label>{label}</label>
+        <textarea {...input} autoComplete="off" />
+        {this.renderError(meta)}
+        {console.log('render meta', meta)}
+      </div>
+    );
+  };
+
   renderIngredient = ({ input, label, meta }) => {
     const className = `recipe-form--ingredient recipe-form--ingredient${
       label === 'Amount of Ingredient' ? '__amount' : ''
@@ -123,7 +138,7 @@ class RecipeForm extends Component {
         <FieldArray name="ingredients" component={this.renderIngredients} />
         <Field
           name="directions"
-          component={this.renderInput}
+          component={this.renderDirections}
           label="Enter Directions"
         />
         <button className="recipe-form--submit recipe--button__submit">

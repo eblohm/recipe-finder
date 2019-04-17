@@ -10,3 +10,12 @@ $color-white: rgb(255, 255, 255);
 
 // Fonts
 $default-heading-font: 'Roboto Slab', serif;
+
+// Breakpoints
+$breakpoints: (
+  'bp-1200': (max-width: 75em),
+  'bp-1000': (max-width: 62.5em),
+  'bp-800': (max-width: 50em),
+  'bp-600': (max-width: 37.5em),
+  'bp-500': (max-width: 31.25em)
+)

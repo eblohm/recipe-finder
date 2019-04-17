@@ -4,6 +4,10 @@
     font-family: $default-heading-font;
     font-size: 1.75rem;
     margin-bottom: .35rem;
+
+    @include breakpoint('bp-600') {
+      font-size: 1.35rem;
+    }
   }
 
   &--divider {

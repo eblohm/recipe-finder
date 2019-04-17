@@ -40,6 +40,10 @@
 
     &__name {
       font-size: 1.5rem;
+
+      @include breakpoint('bp-600') {
+        font-size: 1.3rem;
+      }
     }
   }
 }
