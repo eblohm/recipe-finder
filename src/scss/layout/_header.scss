@@ -1,14 +1,14 @@
 .header {
   align-items: center;
-  background-color: $color-blue;
+  background-color: $color-purple;
   display: flex;
-  font-family: 'Roboto Slab', serif;
+  font-family: $default-heading-font;
   justify-content: space-between;
   padding: 0.5rem 1rem;
 
   &--link {
     &__brand {
-      color: $color-black;
+      color: $color-white;
       font-size: 1.75rem;
     }
   }

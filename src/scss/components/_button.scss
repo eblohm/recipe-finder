@@ -1,17 +1,17 @@
 %buttondefaults {
   border: 0;
   border-radius: 5px;
-  font-family: 'Roboto Slab', serif;
+  display: inline-block;
+  font-family: $default-heading-font;
   padding: 0.5rem;
 }
 
 .recipe--button {
-  &__delete {
+  &__add {
     @extend %buttondefaults;
-    background-color: $color-red;
+    background-color: $color-green;
     color: $color-white;
     font-size: 1rem;
-    margin-right: 0.5rem;
   }
 
   &__cancel {
@@ -19,11 +19,39 @@
     background-color: $color-gray;
     color: $color-black;
   }
+
+  &__delete {
+    @extend %buttondefaults;
+    background-color: $color-red;
+    color: $color-white;
+    font-size: 1rem;
+    margin-right: 0.5rem;
+  }
+  
+  &__edit {
+    @extend %buttondefaults;
+    background-color: $color-blue;
+    color: $color-white;
+    margin-right: .5rem;
+  }
+
+  &__remove {
+    @extend %buttondefaults;
+    background-color: $color-red-light;
+  }
+
+  &__submit {
+    @extend %buttondefaults;
+    background-color: $color-blue;
+    color: $color-white;
+    font-size: 1rem;
+    margin-top: 1rem;
+  }
 }
 
 .button {
   @extend %buttondefaults;
-  background-color: $color-blue-dark;
+  background-color: $color-green;
   color: $color-white;
   display: inline-block;
 }

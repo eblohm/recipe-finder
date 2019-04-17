@@ -4,10 +4,8 @@
 }
 
 %inputdefaults {
-  border: 1px solid $color-black;
   border-radius: 5px;
   outline: 0;
-  padding: 0.25rem;
 }
 
 .recipe-search {
@@ -23,14 +21,18 @@
 
     &__input {
       @extend %inputdefaults;
+      border: 1px solid $color-black;
       margin-right: 0.25rem;
       margin-top: 0.5rem;
+      padding: 0.45rem;
     }
 
     &__submit {
       @extend %inputdefaults;
-      background-color: $color-blue-dark;
+      background-color: $color-green;
+      border: 0;
       color: $color-white;
+      padding: .5rem;
     }
   }
 }

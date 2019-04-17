@@ -35,7 +35,7 @@ class RecipeDelete extends Component {
       return 'Are you sure you want to delete this recipe?';
     }
 
-    return `Are you sure you want to delete ${this.props.recipe.name}`;
+    return `Are you sure you want to delete ${this.props.recipe.name}?`;
   }
 
   render() {

@@ -12,9 +12,12 @@ class RecipeList extends Component {
     return recipes.map(recipe => (
       <div className="recipe" key={recipe.name}>
         <Link to={`/recipes/${recipe.id}`} className="recipe--link">
-          <h3 className="recipe--name">{recipe.name}</h3>
-          <p className="recipe--description">{recipe.description}</p>
+          <h3 className="recipe--link__name recipe--name">{recipe.name}</h3>
+          <p className="recipe--link__description recipe--description">
+            {recipe.description}
+          </p>
         </Link>
+        <hr className="recipe--divider" />
       </div>
     ));
   }

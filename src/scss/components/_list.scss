@@ -1,0 +1,15 @@
+.recipe-list {
+
+  &--response {
+    font-family: $default-heading-font;
+    font-size: 1.75rem;
+    margin-bottom: .35rem;
+  }
+
+  &--divider {
+    background-color: $color-green;
+    border: 0;
+    height: 2px;
+    width: 10%;
+  }
+}

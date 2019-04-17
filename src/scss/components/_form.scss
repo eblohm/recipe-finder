@@ -19,6 +19,26 @@
     margin-bottom: 0.5rem;
   }
 
+  &--ingredients {
+    &__add {
+      text-align: center;
+    }
+
+    &__label {
+      margin-bottom: .25rem;
+    }
+    &__single {
+      margin: 1rem 0;
+    }
+  }
+
+  &--ingredient {
+
+    &__amount {
+      margin: .25rem 0;
+    }
+  }
+
   &--single-ingredient {
     text-align: right;
   }

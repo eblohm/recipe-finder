@@ -21,24 +21,26 @@ class RecipeShow extends Component {
         <p className="recipe--description">{description}</p>
         <h4 className="recipe--ingredients">Ingredients Needed:</h4>
         {ingredients.map(({ ingredient, amount }) => (
-          <div className="recipe--ingredients__item" key={ingredient}>
+          <li className="recipe--ingredients__item" key={ingredient}>
             {amount} {ingredient}
-          </div>
+          </li>
         ))}
         <h4 className="recipe--directions">Directions:</h4>
         <p className="recipe--directions__content">{directions}</p>
-        <Link
-          to={`/recipes/edit/${this.props.recipe.id}`}
-          className="recipe--link__edit"
-        >
-          Edit Recipe
-        </Link>
-        <Link
-          to={`/recipes/delete/${this.props.recipe.id}`}
-          className="recipe--link__delete"
-        >
-          Delete Recipe
-        </Link>
+        <div className="recipe--actions">
+          <Link
+            to={`/recipes/edit/${this.props.recipe.id}`}
+            className="recipe--button__edit"
+          >
+            Edit Recipe
+          </Link>
+          <Link
+            to={`/recipes/delete/${this.props.recipe.id}`}
+            className="recipe--button__delete"
+          >
+            Delete Recipe
+          </Link>
+        </div>
       </div>
     );
   }

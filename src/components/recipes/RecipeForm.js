@@ -27,9 +27,9 @@ class RecipeForm extends Component {
   };
 
   renderIngredient = ({ input, label, meta }) => {
-    const className = `recipe-form--ingredient ${
-      meta.error && meta.touched ? 'error' : ''
-    }`;
+    const className = `recipe-form--ingredient recipe-form--ingredient${
+      label === 'Amount of Ingredient' ? '__amount' : ''
+    } ${meta.error && meta.touched ? 'error' : ''}`;
 
     return (
       <div className={className}>
@@ -43,16 +43,6 @@ class RecipeForm extends Component {
   renderIngredients = ({ fields, meta }) => {
     return (
       <div className="recipe-form--ingredients">
-        <div className="recipe-form--ingredients__add">
-          <button
-            type="button"
-            className="recipe-form--ingredients__add__button"
-            onClick={() => fields.push({})}
-          >
-            Add Ingredient
-          </button>
-          {this.renderError(meta)}
-        </div>
         {fields.map((ingredient, index) => (
           <div className="recipe-form--ingredients__single" key={index}>
             <h4 className="recipe-form--ingredients__label">
@@ -75,13 +65,23 @@ class RecipeForm extends Component {
                 type="button"
                 title="Remove Ingredient"
                 onClick={() => fields.remove(index)}
-                className="recipe-form--ingredient__remove"
+                className="recipe-form--ingredient__remove recipe--button__remove"
               >
                 Remove Ingredient
               </button>
             </div>
           </div>
         ))}
+        <div className="recipe-form--ingredients__add">
+          <button
+            type="button"
+            className="recipe-form--ingredients__add recipe--button__add"
+            onClick={() => fields.push({})}
+          >
+            Add Ingredient
+          </button>
+          {this.renderError(meta)}
+        </div>
       </div>
     );
   };
@@ -112,7 +112,9 @@ class RecipeForm extends Component {
           component={this.renderInput}
           label="Enter Directions"
         />
-        <button className="recipe-form--submit">Submit</button>
+        <button className="recipe-form--submit recipe--button__submit">
+          Create Recipe
+        </button>
       </form>
     );
   }
