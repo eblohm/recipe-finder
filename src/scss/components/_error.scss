@@ -1,0 +1,16 @@
+.error {
+  flex-wrap: wrap;
+
+  label,
+  .recipe-form--error {
+    color: $color-red;
+  }
+
+  input {
+    border: 1px solid $color-red;
+  }
+
+  .recipe-form--error {
+    flex-basis: 100%;
+  }
+}

@@ -22,6 +22,7 @@ class RecipeForm extends Component {
         <label>{label}</label>
         <input {...input} autoComplete="off" />
         {this.renderError(meta)}
+        {console.log('render input', meta)}
       </div>
     );
   };
@@ -81,6 +82,7 @@ class RecipeForm extends Component {
             Add Ingredient
           </button>
           {this.renderError(meta)}
+          {console.log(meta)}
         </div>
       </div>
     );
@@ -127,17 +129,38 @@ const validate = formValues => {
     errors.name = 'You must enter a name';
   }
 
-  if (!formValues.ingredients) {
-    errors.ingredients = 'At least one ingredient is required!';
-  }
+  if (!formValues.ingredients || !formValues.ingredients.length) {
+    errors.ingredients = { _error: 'At least one ingredient must be added!' };
+  } else {
+    const ingredientsArrayErrors = [];
 
-  if (!formValues.ingredient) {
-    errors.ingredient = 'You must enter the ingredient';
+    formValues.ingredients.forEach((ingredient, ingredientIndex) => {
+      const ingredientErrors = {};
+      if (!ingredient || !ingredient.ingredient) {
+        ingredientErrors.ingredient =
+          'You must enter a name for this ingredient.';
+
+        ingredientsArrayErrors[ingredientIndex] = ingredientErrors;
+      }
+
+      if (!ingredient || !ingredient.amount) {
+        ingredientErrors.amount =
+          'You must specify how much of this ingredient.';
+
+        ingredientsArrayErrors[ingredientIndex] = ingredientErrors;
+      }
+    });
+
+    if (ingredientsArrayErrors.length) {
+      errors.ingredients = ingredientsArrayErrors;
+    }
   }
 
   if (!formValues.directions) {
     errors.directions = 'How do you expect to cook this without directions?';
   }
+
+  console.log('these are the errors', errors);
 
   return errors;
 };
